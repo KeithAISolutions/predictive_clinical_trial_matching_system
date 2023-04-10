@@ -1,0 +1,19 @@
+{
+  "name": "PCTMS Codespaces",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "njpwerner.autodocstring",
+    "github.copilot",
+    "ms-vscode.cpptools",
+  ],
+  "settings": {
+    "python.pythonPath": "/usr/local/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true
+  }
+}
