@@ -1,4 +1,4 @@
-FROM postgres:latest
+FROM python:3.11-slim
 
 # Install system dependencies
 RUN apt-get update && \
@@ -8,21 +8,19 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install Python 3.11
-RUN wget https://www.python.org/ftp/python/3.11.0/Python-3.11.0.tar.xz && \
-    tar -xf Python-3.11.0.tar.xz && \
-    cd Python-3.11.0 && \
-    ./configure && \
-    make && \
-    make install && \
-    cd .. && \
-    rm -rf Python-3.11.0 Python-3.11.0.tar.xz
+# Install PostgreSQL server
+RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main' > /etc/apt/sources.list.d/pgdg.list && \
+    curl -s https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/pgdg.gpg.asc && \
+    apt-get update && \
+    apt-get install -y postgresql-14 postgresql-client-14 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install TypeScript
 RUN npm install -g typescript
 
 # Install Python packages
-RUN python3.11 -m pip install --upgrade pip && \
+RUN python -m pip install --upgrade pip && \
     pip install pylint psycopg2-binary
 
 # Setup user
