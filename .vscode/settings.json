@@ -2,12 +2,13 @@
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
     "editor.detectIndentation": false,
-    "python.linting.pylintEnabled": true,
+    "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "python.formatting.autopep8Path": "autopep8",
     "python.formatting.autopep8Args": ["--max-line-length", "88"],
     "python.formatting.provider": "autopep8",
     "json.format.enable": true,
-    "json.format.quote": "double"
+    "json.format.quote": "double",
+    "python.linting.mypyEnabled": true
   }
   

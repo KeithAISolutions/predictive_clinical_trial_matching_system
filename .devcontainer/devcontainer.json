@@ -2,8 +2,15 @@
     "name": "Python 3.11, Postgres, and TypeScript",
     "dockerComposeFile": "docker-compose.yml",
     "service": "python",
-    "workspaceFolder": "/workspace"
-,
+    "workspaceFolder": "/workspace",  
+    "extensions": [
+        "ms-python.python",
+        "dbaeumer.vscode-eslint",
+        "ms-azuretools.vscode-postgresql",
+        "github.copilot",
+        "eamodio.gitlens",
+        "njpwerner.autodocstring"
+      ],
     "forwardPorts": [5432],
     "postCreateCommand": "echo 'Done! Workspace is set up for Python 3.11, Postgres, and TypeScript development.'"
   }
