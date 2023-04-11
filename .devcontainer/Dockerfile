@@ -1,8 +1,8 @@
-FROM python:3.11-slim
+FROM python:3.11-slim-buster
 
 # Install system dependencies
 RUN apt-get update && \
-    apt-get install -y build-essential libssl-dev libffi-dev python3-dev curl gnupg2 lsb-release wget && \
+    apt-get install -y build-essential libssl-dev libffi-dev python3-dev curl gnupg2 lsb-release wget apt-transport-https ca-certificates && \
     curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
     apt-get install -y nodejs && \
     apt-get clean && \
