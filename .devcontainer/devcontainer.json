@@ -1,16 +1,17 @@
 {
-  "name": "Python 3.11, Postgres, and TypeScript",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "extensions": [
-    "ms-python.python",
-    "ms-vscode.vscode-typescript-tslint-plugin",
-    "ms-azuretools.vscode-postgresql"
-  ],
-  "forwardPorts": [5432],
-  "postCreateCommand": "echo 'Done! Workspace is set up for Python 3.11, Postgres, and TypeScript development.'"
-}
+    "name": "Python 3.11, Postgres, and TypeScript",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "python",
+    "workspaceFolder": "/workspace",
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+      "ms-python.python",
+      "ms-vscode.vscode-typescript-tslint-plugin",
+      "ms-azuretools.vscode-postgresql"
+    ],
+    "forwardPorts": [5432],
+    "postCreateCommand": "echo 'Done! Workspace is set up for Python 3.11, Postgres, and TypeScript development.'"
+ }
+  
