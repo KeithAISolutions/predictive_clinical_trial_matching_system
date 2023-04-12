@@ -13,3 +13,7 @@ POSTGRES_PASSWORD=<secure_password>
 Then update the POSTGRES_USER and POSTGRES_PASSWORD environment variables in the docker-compose.yml file to use these credentials instead of the defaults.
 
 Failure to properly configure secure Postgres credentials in a production environment could result in data theft or loss. Use the defaults only for local setup, with the understanding that your database has full admin access. For production, environment variables with limited-privilege credentials are highly recommended for security best practices.
+
+
+
+

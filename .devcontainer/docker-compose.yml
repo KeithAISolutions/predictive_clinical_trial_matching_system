@@ -9,6 +9,8 @@ services:
     volumes:
       - .:/workspace
     command: tail -f /dev/null
+    environment:
+      DATABASE_URL: postgresql://devuser:devpassword@<codespace_ip>:5432/devdb
     depends_on:
       - postgres
 

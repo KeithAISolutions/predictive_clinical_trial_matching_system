@@ -1,6 +1,7 @@
-from flask import render_template
-from .routes import main_bp
+from flask import Blueprint
 
-@main_bp.route('/about')
-def about():
-    return render_template('main/about.html')
+main_blueprint = Blueprint('main', __name__)
+
+@main_blueprint.route('/hello')
+def hello():
+    return "Hello, World!"
